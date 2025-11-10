@@ -1,0 +1,5 @@
+.vscode/*
+*.pyc
+mypy.ini
+.env
+
