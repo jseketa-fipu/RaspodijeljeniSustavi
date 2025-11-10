@@ -19,5 +19,5 @@ async def main() -> None:
 
 if __name__ == "__main__":
 
-    with Timer("More then 2 seconds, but not for a lot: ") as timer:
+    with Timer("More than 2 seconds, but not for a lot: ") as timer:
         asyncio.run(main())
