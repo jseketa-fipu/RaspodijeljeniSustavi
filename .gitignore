@@ -2,4 +2,5 @@
 *.pyc
 mypy.ini
 .env
+.venv
 
