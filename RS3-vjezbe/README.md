@@ -41,3 +41,56 @@ Korutinu `autentifikacija()` pozovite u `main()` funkciji s proizvoljnim korisni
 <br>
 
 5. **Definirajte korutinu `secure_data` koja će simulirati enkripciju osjetljivih podataka**. Kako se u praksi enkripcija radi na poslužiteljskoj strani, korutina će simulirati enkripciju podataka u trajanju od 3 sekunde. Korutina prima kao argument rječnik osjetljivih podataka koji se sastoji od ključeva `prezime`, `broj_kartice` i `CVV`. Definirajte listu s 3 rječnika osjetljivih podataka. Pohranite u listu `zadaci` kao u prethodnom zadatku te pozovite zadatke koristeći `asyncio.gather()`. Korutina `secure_data` mora za svaki rječnik vratiti novi rječnik u obliku: `{'prezime': `prezime`, 'broj_kartice': 'enkriptirano', 'CVV': 'enkriptirano'}`. Za fake enkripciju koristite funkciju `hash(str)` koja samo vraća hash vrijednost ulaznog stringa.
+
+<br>
+
+6. **Kako možete unutar `main` korutine natjerati _event loop_ da obuhvati ispis unutar korutine** `fetch_data(2)` bez da ju _awaitate_ unutar `main` funkcije. Preciznije, dokažite kako se može ispisati tekst `Dovršio sam s 2.` unutar korutine `fetch_data(2)` bez da eksplicitno pozivate `await task2` unutar `main()` funkcije.
+
+```python
+import asyncio, time
+
+async def fetch_data(param):
+    print(f"Nešto radim s {param}...")
+    await asyncio.sleep(param)
+    print(f'Dovršio sam s {param}.')
+    return f"Rezultat za {param}"
+
+async def main():
+    task1 = asyncio.create_task(fetch_data(1)) # schedule
+    task2 = asyncio.create_task(fetch_data(2)) #schedule
+    result1 = await task1
+    print("Fetch 1 uspješno završen.")
+    return [result1]
+
+
+t1 = time.perf_counter()
+results = asyncio.run(main()) # pokretanje event loop-a
+t2 = time.perf_counter()
+print(results)
+print(f"Vrijeme izvođenja {t2 - t1:.2f} sekunde")
+```
+
+<br>
+
+7. **Objasnite korak po korak kako se ponaša _event loop_** (kako se raspoređuju, izvršavaju i dovršavaju korutine te koja su njihova stanja u različitim fazama izvođenja) u sljedećem primjeru:
+
+```python
+import asyncio
+
+async def timer(name, delay):
+    for i in range(delay, 0, -1):
+        print(f'{name}: {i} sekundi preostalo...')
+        await asyncio.sleep(1)
+    print(f'{name}: Vrijeme je isteklo!')
+
+async def main():
+    timers = [
+        asyncio.create_task(timer('Timer 1', 3)),
+        asyncio.create_task(timer('Timer 2', 5)),
+        asyncio.create_task(timer('Timer 3', 7))
+    ]
+
+    await asyncio.gather(*timers)
+
+asyncio.run(main())
+```
