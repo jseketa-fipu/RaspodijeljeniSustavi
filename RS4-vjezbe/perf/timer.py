@@ -21,5 +21,5 @@ class Timer:
         traceback_type: Optional[TracebackType],
     ) -> Literal[False]:
         self.elapsed = time.perf_counter() - (self._start or 0.0)
-        print(f"{self.label} took {self.elapsed:.3f}s")
+        print(f"{self.label} {self.elapsed:.3f}s")
         return False  # don’t suppress exceptions
