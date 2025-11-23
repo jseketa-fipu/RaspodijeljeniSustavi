@@ -1,3 +1,4 @@
+# zadatak 01 - fetch_users i izdvajanje podataka
 import asyncio
 import aiohttp
 import itertools
