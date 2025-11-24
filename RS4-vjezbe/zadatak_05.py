@@ -2,6 +2,9 @@
 import asyncio
 import aiohttp
 
+# don't store list of constants in a function, it is bad vibe.
+urls = ["https://example.com", "https://httpbin.org/get", "https://api.github.com"]
+
 
 async def fetch_url(session: aiohttp.ClientSession, url: str) -> str:
     async with session.get(url) as resp:
@@ -11,11 +14,12 @@ async def fetch_url(session: aiohttp.ClientSession, url: str) -> str:
 
 
 async def main() -> None:
-    urls = ["https://example.com", "https://httpbin.org/get", "https://api.github.com"]
+
     async with aiohttp.ClientSession() as session:
         tasks = [fetch_url(session, url) for url in urls]
         results = await asyncio.gather(*tasks)
 
+    # iterate through both lists in lockstep
     for url, result in zip(urls, results):
         print(f"Fetched {len(result)} characters from {url}")
 
