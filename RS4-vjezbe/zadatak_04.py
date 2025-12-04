@@ -53,10 +53,7 @@ async def autentifikacija(
 
 async def main() -> None:
     # tasks are already running here
-    tasks = [
-        asyncio.wait_for(autentifikacija(user, password, True), timeout=3.1)
-        for user, password in attempts
-    ]
+    tasks = [autentifikacija(user, password, False) for user, password in attempts]
     # if the timeout error occurs, there is a race condition between
     # the TimeoutError exception raised in the coroutine and the one
     # that the asyncio.wait_for raises.
