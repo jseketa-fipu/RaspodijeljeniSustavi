@@ -1,6 +1,5 @@
-.vscode/*
+*/.vscode/*
 *.pyc
 mypy.ini
 .env
 .venv
-
