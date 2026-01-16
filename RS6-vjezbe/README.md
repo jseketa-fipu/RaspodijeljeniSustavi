@@ -102,3 +102,38 @@ Implementirajte mikroservis za dohvaćanja podataka o filmovima koristeći FastA
 Rješenje učitajte na GitHub i predajte na Merlin, uz pripadajuće screenshotove dokumentacije koja se generira automatski na `/docs` ruti.
 
 > Nema univerzalnog rješenja za organizaciju koda i implementaciju API-ja, a zadaća nosi do 2 dodatna boda ovisno o kvaliteti izrade FastAPI mikroservisa.
+
+Swagger docs:
+Intro/simple exercises:
+<img width="1021" height="1268" alt="image" src="https://github.com/user-attachments/assets/95d829c9-2460-427a-85e2-505f76c0887f" />
+
+<img width="1024" height="1101" alt="image" src="https://github.com/user-attachments/assets/b8b1fa56-fc84-4fb3-99aa-ab7da5486bba" />
+
+<img width="1021" height="999" alt="image" src="https://github.com/user-attachments/assets/ac07f291-d9ed-4afd-aff1-b9a79b021e5e" />
+
+<img width="1018" height="1379" alt="image" src="https://github.com/user-attachments/assets/61488290-dc39-4df7-b69d-0550b284a628" />
+
+<img width="1016" height="1173" alt="image" src="https://github.com/user-attachments/assets/aaf0056a-f60d-45a1-853f-3b3aa1c77380" />
+
+<img width="1022" height="1038" alt="image" src="https://github.com/user-attachments/assets/b87f1aa7-cfcb-4455-8754-8bace3514e72" />
+
+Movies service:
+<img width="1031" height="1786" alt="image" src="https://github.com/user-attachments/assets/ec308873-3112-4870-8e61-43c1af9d31a2" />
+
+<img width="1022" height="1305" alt="image" src="https://github.com/user-attachments/assets/7b913f89-36fc-4cde-8e50-2d1cdc3a8a7e" />
+
+<img width="1022" height="1300" alt="image" src="https://github.com/user-attachments/assets/b3527ac1-6add-4fc6-a744-2de5f3e51e9d" />
+
+Schemas:
+
+<img width="1036" height="642" alt="image" src="https://github.com/user-attachments/assets/ccdede9b-04fe-4b88-9a78-2fb5b5cb248f" />
+
+
+
+
+
+
+
+
+
+
