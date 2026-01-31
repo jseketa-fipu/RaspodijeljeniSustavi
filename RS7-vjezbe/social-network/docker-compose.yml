@@ -1,0 +1,21 @@
+services:
+  authapi:
+    build: ./authAPI
+    ports:
+      - "9000:9000"
+    networks:
+      - socialnet
+  socialapi:
+    build: ./socialAPI
+    ports:
+      - "3500:3500"
+    environment:
+      AUTH_API_URL: http://authapi:9000
+    depends_on:
+      - authapi
+    networks:
+      - socialnet
+
+networks:
+  socialnet:
+    driver: bridge
